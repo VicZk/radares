@@ -1,0 +1,25 @@
+{
+  "name": "radar-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:trechos": "node scripts/build-trechos.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@turf/along": "^7.3.0",
+    "@turf/distance": "^7.3.0",
+    "@turf/helpers": "^7.3.0",
+    "@turf/length": "^7.3.0",
+    "@turf/line-slice-along": "^7.3.0",
+    "@turf/turf": "^7.3.0",
+    "csv-parse": "^6.1.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

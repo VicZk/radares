@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa de Trechos Fiscalizados por Radar</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <h1>Trechos com Fiscalização por Radar</h1>
+        <p>
+          Explore no mapa abaixo os segmentos de rodovias federais onde existe fiscalização ativa com radares
+          portáteis da PRF (Resolução 798/20 do CONTRAN). Use os filtros para limitar por estado ou buscar por
+          rodovia específica.
+        </p>
+      </div>
+    </header>
+
+    <section class="controls">
+      <div class="control">
+        <label for="ufSelect">Estado (UF)</label>
+        <select id="ufSelect">
+          <option value="">Todos</option>
+        </select>
+      </div>
+      <div class="control">
+        <label for="roadSelect">Rodovia (BR)</label>
+        <select id="roadSelect">
+          <option value="">Todas</option>
+        </select>
+      </div>
+      <div class="control control--search">
+        <label for="searchInput">Busca rápida</label>
+        <input id="searchInput" type="text" placeholder="ex: Fortaleza, 230, km 100" />
+      </div>
+      <div class="control control--checkbox">
+        <label>
+          <input id="toggleHeat" type="checkbox" />
+          Colorir por intensidade (km fiscalizados por UF)
+        </label>
+      </div>
+      <button id="resetFilters" class="button">Limpar filtros</button>
+    </section>
+
+    <section class="summary" id="summary">
+      Carregando dados...
+    </section>
+
+    <main class="map-wrapper">
+      <div id="map"></div>
+      <div class="legend" id="legend"></div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Dados oficiais da <strong>PRF</strong> (Nov/2025). Geometrias derivadas do
+        <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> via
+        <a href="https://overpass-api.de" target="_blank" rel="noopener noreferrer">Overpass API</a>.
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
